@@ -1151,7 +1151,7 @@ void TestBase::Init(const std::vector<std::string> & availableImpls,
 
     activateTestTags(args);
 
-    if (!args.check())
+    if (!args.check_parse())
     {
         args.printErrors();
         exit(1);

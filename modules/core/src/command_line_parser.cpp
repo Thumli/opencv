@@ -366,7 +366,7 @@ bool CommandLineParser::has(const String& name) const
     CV_Error_(Error::StsBadArg, ("undeclared key '%s' requested", name.c_str()));
 }
 
-bool CommandLineParser::check() const
+bool CommandLineParser::check_parse() const
 {
     return impl->error == false;
 }

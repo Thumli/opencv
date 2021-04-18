@@ -29,7 +29,7 @@ TEST(CommandLineParser, testFailure)
     EXPECT_ANY_THROW(parser.get<bool>(0));
 
     parser.get<bool>("h");
-    EXPECT_FALSE(parser.check());
+    EXPECT_FALSE(parser.check_parse());
 }
 
 TEST(CommandLineParser, testHas_noValues)
@@ -233,11 +233,11 @@ TEST(CommandLineParser, testEmptyStringValue)
     cv::CommandLineParser parser(argc, argv, keys3);
     // EXPECT_TRUE(parser.has("@pos0"));
     EXPECT_EQ("", parser.get<String>("@pos0"));
-    EXPECT_TRUE(parser.check());
+    EXPECT_TRUE(parser.check_parse());
 
     EXPECT_FALSE(parser.has("@pos1"));
     parser.get<String>(1);
-    EXPECT_FALSE(parser.check());
+    EXPECT_FALSE(parser.check_parse());
 }
 
 TEST(CommandLineParser, positional_regression_5074_equal_sign)
@@ -252,7 +252,7 @@ TEST(CommandLineParser, positional_regression_5074_equal_sign)
     EXPECT_EQ("1=0", parser.get<String>("@eq0"));
     EXPECT_EQ("1=0", parser.get<String>(0));
     EXPECT_EQ("1=0", parser.get<String>("eq1"));
-    EXPECT_TRUE(parser.check());
+    EXPECT_TRUE(parser.check_parse());
 }
 
 
