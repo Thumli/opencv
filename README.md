@@ -1,5 +1,7 @@
 ## OpenCV: Open Source Computer Vision Library
 
+ This fork is trying to solve the conflicts with Unreal Engine.
+
 ### Resources
 
 * Homepage: <https://opencv.org>
